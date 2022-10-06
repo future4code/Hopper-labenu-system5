@@ -1,5 +1,4 @@
 import { Request,Response } from "express";
-import { Docente } from "../classes/Docentes";
 import { DocenteDataBase } from "../database/DocenteDatabase";
 
 export const postDocente =async (req:Request, res:Response) => {
