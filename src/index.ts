@@ -4,6 +4,8 @@ import dotenv from "dotenv";
 import { postTurma } from "./endpoints/postTurma";
 import { putTurmaModel } from "./endpoints/putTurmaModel";
 import { getTurma } from "./endpoints/getTurma";
+import { getDocente } from "./endpoints/getDocente";
+import { postDocente } from "./endpoints/postDocente";
 
 dotenv.config()
 const app = express()
@@ -20,3 +22,11 @@ app.get("/turma", getTurma)
 app.post("/turma", postTurma)
 
 app.put("/turma/modulo", putTurmaModel)
+
+
+//ELLEN
+
+app.get("/docente", getDocente)
+
+app.post("/docente",postDocente)
+

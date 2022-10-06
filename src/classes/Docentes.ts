@@ -15,8 +15,12 @@ export class Docente extends Pessoa {
             email,
             data_nasc,
             turma
-        )
+        )}
 
-        this.especialidades = especialidades
+        public getEspecialidade(): string[] {
+            return this.especialidades;
+          }
     }
-}
+
+
+    

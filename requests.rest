@@ -19,3 +19,21 @@ Content-Type: application/json
     "id": "1664923146588",
     "modulo": "3"
 }
+
+//ELLEN 
+
+### 
+GET http://localhost:3003/docente
+
+###
+
+POST http://localhost:3003/docente
+Content-Type: application/json
+
+{
+    "nome": "cruvina",
+    "email": "cruvina@hotmail.com",
+    "data_nasc": "12/08/1990",
+    "turma": "System5",
+    
+}
