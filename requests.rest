@@ -37,3 +37,13 @@ Content-Type: application/json
     "turma": "System5",
     
 }
+
+###
+
+PUT http://localhost:3003/docente
+Content-Type: application/json
+
+{
+    "nome":"cruvina",
+    "turma":"System"
+}

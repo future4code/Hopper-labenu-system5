@@ -5,6 +5,12 @@ export const getDocente = async(req:Request, res:Response)=>{
     let errorCode = 400
 
     try {
+        const nome = req.body
+
+        if(!nome){
+            throw new Error("Insira o nome do docente!");
+            
+        }
         const docenteDataBase = new DocenteDataBase()
         const result = await docenteDataBase.getDocente()
 

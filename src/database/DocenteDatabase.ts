@@ -31,7 +31,12 @@ export class DocenteDataBase extends BaseDatabase {
         return result
 
     }
-    public async mudarDocente() {
+    public async mudarDocente(id:string) {
+                const result = await connection(TABELA_DOCENTE)
+        .select()
+        .update({id})
+
+        return result
 
      }
 }
