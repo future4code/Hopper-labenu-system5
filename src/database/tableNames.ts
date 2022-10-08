@@ -1,4 +1,4 @@
-export const TABELA_TURMA = "LabeSys_Turma"
+// export const TABELA_TURMA = "LabeSys_Turma"
 export const TABELA_ESTUDANTE = "LabeSys_Estudante"
 export const TABELA_DOCENTE = "LabeSys_Docente"
 export const TABELA_HOBBY = "LabeSys_Hobby"

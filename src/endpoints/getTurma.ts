@@ -7,7 +7,7 @@ export const getTurma = async (req: Request, res: Response) => {
         const instancia = new TurmaDatabase()
         const [result] = await instancia.getTurma()
 
-        res.status(201).send({ result: result})
+        res.status(200).send(result)
     } catch (error: any) {
         res.status(errorCode).send({ message: error.message })
     }

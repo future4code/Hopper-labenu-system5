@@ -14,7 +14,7 @@ export const putTurmaModel = async (req: Request, res: Response) => {
         const instancia = new TurmaDatabase()
         instancia.putTurmaModulo(id,modulo)
 
-        res.status(201).send({ message: "Módulo alterado"})
+        res.status(200).send({ message: "Módulo alterado"})
     } catch (error: any) {
         res.status(errorCode).send({ message: error.message })
     }

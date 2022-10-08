@@ -16,8 +16,8 @@ PUT http://localhost:3003/turma/modulo
 Content-Type: application/json
 
 {
-    "id": "1664923146588",
-    "modulo": "3"
+    "id": "1665072619896",
+    "modulo": "5"
 }
 
 //ELLEN 
