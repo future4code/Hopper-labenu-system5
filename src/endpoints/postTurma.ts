@@ -1,7 +1,6 @@
 import { Request, Response } from "express"
 import { Turma } from "../classes/Turma"
-import connection from "../database/connection"
-import { TABELA_TURMA } from "../database/tableNames"
+import { TurmaDatabase } from "../database/TurmaDatabase"
 
 export const postTurma = async (req: Request, res: Response) => {
     let errorCode = 400
@@ -16,9 +15,9 @@ export const postTurma = async (req: Request, res: Response) => {
 
         const newTurma = new Turma(id,nome,modulo)
 
-        await connection(TABELA_TURMA).insert(
-            newTurma 
-        )
+        const turmaDatabase = new TurmaDatabase()
+
+        turmaDatabase.postTurma(newTurma)
 
         res.status(201).send({ message: "Turma criada", turma: newTurma})
     } catch (error: any) {
