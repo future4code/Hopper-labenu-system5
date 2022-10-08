@@ -1,6 +1,5 @@
 import { Request, Response } from "express"
-import connection from "../database/connection"
-import { TABELA_TURMA } from "../database/tableNames"
+import { TurmaDatabase } from "../database/TurmaDatabase"
 
 export const putTurmaModel = async (req: Request, res: Response) => {
     let errorCode = 400
@@ -8,15 +7,12 @@ export const putTurmaModel = async (req: Request, res: Response) => {
         const id = req.body.id
         const modulo = req.body.modulo
 
-        if (!modulo) {
+        if (!id || !modulo) {
             throw new Error("Body inválido.")
         }
 
-        await connection(TABELA_TURMA)
-        .where({id: id})
-        .update({
-            modulo: modulo
-        },['id','modulo'])
+        const instancia = new TurmaDatabase()
+        instancia.putTurmaModulo(id,modulo)
 
         res.status(201).send({ message: "Módulo alterado"})
     } catch (error: any) {

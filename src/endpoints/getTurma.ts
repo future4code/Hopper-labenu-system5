@@ -1,11 +1,11 @@
 import { Request, Response } from "express"
-import connection from "../database/connection"
-import { TABELA_TURMA } from "../database/tableNames"
+import { TurmaDatabase } from "../database/TurmaDatabase"
 
 export const getTurma = async (req: Request, res: Response) => {
     let errorCode = 400
     try {
-        const [result] = await connection(TABELA_TURMA)
+        const instancia = new TurmaDatabase()
+        const [result] = await instancia.getTurma()
 
         res.status(201).send({ result: result})
     } catch (error: any) {
