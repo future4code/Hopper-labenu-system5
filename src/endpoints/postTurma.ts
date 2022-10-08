@@ -15,9 +15,8 @@ export const postTurma = async (req: Request, res: Response) => {
 
         const newTurma = new Turma(id,nome,modulo)
 
-        const turmaDatabase = new TurmaDatabase()
-
-        turmaDatabase.postTurma(newTurma)
+        const instancia = new TurmaDatabase()
+        instancia.postTurma(newTurma)
 
         res.status(201).send({ message: "Turma criada", turma: newTurma})
     } catch (error: any) {

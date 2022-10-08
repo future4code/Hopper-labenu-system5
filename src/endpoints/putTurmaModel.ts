@@ -11,9 +11,8 @@ export const putTurmaModel = async (req: Request, res: Response) => {
             throw new Error("Body inválido.")
         }
 
-        const turmaDatabase = new TurmaDatabase()
-
-        turmaDatabase.putTurmaModel(id,modulo)
+        const instancia = new TurmaDatabase()
+        instancia.putTurmaModulo(id,modulo)
 
         res.status(200).send({ message: "Módulo alterado"})
     } catch (error: any) {

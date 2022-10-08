@@ -1,29 +1,29 @@
 import { Turma } from "../classes/Turma";
-import BaseDatabase from "./BaseDatabase";
+import { BaseDatabase } from "./BaseDatabase";
 
 export class TurmaDatabase extends BaseDatabase {
-    public static TABELA_TURMA = "LabeSys_Turma"
+    public static TABELA_TURMA = "LubeSys_Turma"
 
-    public async getTurma(): Promise<Turma[]>{
+    public async getTurma(): Promise<Turma[]> {
         const result = await BaseDatabase
         .connection(TurmaDatabase.TABELA_TURMA)
         .select()
-        console.log(result)
+
         return result
     }
 
     public async postTurma(
         newTurma: Turma
-    ): Promise<void>{
+    ): Promise<void> {
         await BaseDatabase
         .connection(TurmaDatabase.TABELA_TURMA)
         .insert(newTurma)
     }
 
-    public async putTurmaModel(
+    public async putTurmaModulo(
         id: string, 
         modulo: string
-    ): Promise<void>{
+    ): Promise<void> {
         await BaseDatabase
         .connection(TurmaDatabase.TABELA_TURMA)
         .where({id: id})

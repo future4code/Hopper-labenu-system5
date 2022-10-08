@@ -1,6 +1,5 @@
 import { Request, Response } from "express"
-import connection from "../database/connection"
-import { TABELA_ESTUDANTE } from "../database/tableNames"
+import { EstudanteDatabase } from "../database/EstudanteDatabase"
 
 export const putEstudanteTurma = async (req: Request, res: Response) => {
     let errorCode = 400
@@ -12,11 +11,8 @@ export const putEstudanteTurma = async (req: Request, res: Response) => {
             throw new Error("Body inválido.")
         }
 
-        await connection(TABELA_ESTUDANTE)
-        .where({id: id})
-        .update({
-            turma: turma
-        },['id','turma'])
+        const instancia = new EstudanteDatabase()
+        instancia.putEstudanteTurma(id,turma)
 
         res.status(201).send({ message: "Turma alterada"})
     } catch (error: any) {
