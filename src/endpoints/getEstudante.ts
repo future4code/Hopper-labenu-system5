@@ -1,11 +1,11 @@
 import { Request, Response } from "express"
-import connection from "../database/connection"
-import { TABELA_ESTUDANTE } from "../database/tableNames"
+import { EstudanteDatabase } from "../database/EstudanteDatabase"
 
 export const getEstudante = async (req: Request, res: Response) => {
     let errorCode = 400
     try {
-        const [result] = await connection(TABELA_ESTUDANTE)
+        const instancia = new EstudanteDatabase()
+        const [result] = await instancia.getEstudante()
 
         res.status(201).send({ result: result})
     } catch (error: any) {
