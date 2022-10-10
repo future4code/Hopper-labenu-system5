@@ -1,8 +1,8 @@
-GET http://localhost:3003/turma
+GET https://gentle-forest-83766.herokuapp.com/turma
 
 ###
 
-POST http://localhost:3003/turma
+POST https://gentle-forest-83766.herokuapp.com/turma
 Content-Type: application/json
 
 {
