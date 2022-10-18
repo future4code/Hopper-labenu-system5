@@ -1,0 +1,49 @@
+GET https://gentle-forest-83766.herokuapp.com/turma
+
+###
+
+POST https://gentle-forest-83766.herokuapp.com/turma
+Content-Type: application/json
+
+{
+    "nome": "Hooks",
+    "modulo": "2"
+}
+
+###
+
+PUT http://localhost:3003/turma/modulo
+Content-Type: application/json
+
+{
+    "id": "1665337793637",
+    "modulo": "5"
+}
+
+//ELLEN 
+
+### 
+GET http://localhost:3003/docente
+
+###
+
+POST http://localhost:3003/docente
+Content-Type: application/json
+
+{
+    "nome": "cruvina",
+    "email": "cruvina@hotmail.com",
+    "data_nasc": "12/08/1990",
+    "turma": "System5",
+    
+}
+
+###
+
+PUT http://localhost:3003/docente
+Content-Type: application/json
+
+{
+    "nome":"cruvina",
+    "turma":"System"
+}
